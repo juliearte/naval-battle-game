@@ -16,7 +16,7 @@ public class GameController {
         for (int row = 0; row < gridPaneGame.getRowCount(); row++) {
             for (int col = 0; col < gridPaneGame.getColumnCount(); col++) {
                 // Add your logic to initialize each cell in the grid
-                // For example, you can set a default style or add event handlers
+                // add event handlers
             }
         }
 
@@ -24,7 +24,7 @@ public class GameController {
         for (int row = 0; row < gridPaneGame1.getRowCount(); row++) {
             for (int col = 0; col < gridPaneGame1.getColumnCount(); col++) {
                 // Add your logic to initialize each cell in the grid
-                // For example, you can set a default style or add event handlers
+                // add event handlers
             }
         }
     }
