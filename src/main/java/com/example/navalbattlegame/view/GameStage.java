@@ -17,7 +17,7 @@ public class GameStage extends Stage {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         setResizable(false);
-        setTitle("Naval Battle Game");
+        setTitle("Juego Batalla Naval");
         gameController = loader.getController();
         double screenWidth = javafx.stage.Screen.getPrimary().getBounds().getWidth();
         double screenHeight = javafx.stage.Screen.getPrimary().getBounds().getHeight();

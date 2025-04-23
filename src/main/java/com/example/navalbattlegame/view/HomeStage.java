@@ -16,7 +16,7 @@ public class HomeStage extends Stage {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         setResizable(false);
-        setTitle("NAVAL BATTLE");
+        setTitle("Batalla Naval");
         Image icon = new Image(Objects.requireNonNull(getClass().getResource("/com/example/navalbattlegame/images/favicon.png")).toExternalForm());
         getIcons().add(icon);
         setScene(scene);
