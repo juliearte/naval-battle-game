@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1400.0" stylesheets="@styles/game.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.navalbattle.controllers.GameController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="28.0" prefWidth="686.0" styleClass="tittle" stylesheets="@styles/game.css" text=" NAVAL BATTLE" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="nicknameLabel" alignment="CENTER" prefHeight="55.0" prefWidth="326.0" styleClass="text" textAlignment="CENTER" underline="true" wrapText="true">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="19.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="700.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#onActionGameInstructions" prefHeight="33.0" prefWidth="286.0" text="Game Instructions" textAlignment="CENTER" />
+               </children>
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="520.0" prefWidth="1400.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="520.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="42.0" prefWidth="300.0" style="-fx-border-color: white;" styleClass="dis" stylesheets="@styles/game.css" text="Naval Fleet" textFill="#030303" underline="true">
+                     <font>
+                        <Font name="Comic Sans MS" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane alignment="CENTER_RIGHT" prefHeight="450.0" prefWidth="300.0" style="-fx-border-color: white;" styleClass="dis">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="119.19998168945312" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="149.60001220703126" minWidth="10.0" prefWidth="147.20001831054688" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="130.0" styleClass="dis" text="Aircraft Carrier" textAlignment="CENTER" wrapText="true" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="130.0" styleClass="dis" text="Submarine" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="130.0" styleClass="dis" text="Destroyer" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="130.0" styleClass="dis" text="Frigate" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <Pane fx:id="contenedorBarco1" onDragDetected="#handleDragDetected" prefHeight="30.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="25.0" />
+                           </GridPane.margin></Pane>
+                        <Pane fx:id="contenedorDestroyer1" onDragDetected="#handleDragDetected" prefHeight="30.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="25.0" />
+                           </GridPane.margin></Pane>
+                        <Pane fx:id="contenedorSubmarino1" onDragDetected="#handleDragDetected" prefHeight="30.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="25.0" />
+                           </GridPane.margin></Pane>
+                        <Pane fx:id="contenedorAircraft1" onDragDetected="#handleDragDetected" prefHeight="87.0" prefWidth="95.0" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" top="25.0" />
+                           </GridPane.margin></Pane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+                  <ToggleButton fx:id="verticalHorizontal" mnemonicParsing="false" onAction="#toggleOrientation" prefHeight="23.0" prefWidth="312.0" style="-fx-border-color: white;" styleClass="button" text="Horizontal">
+                     <VBox.margin>
+                        <Insets top="1.0" />
+                     </VBox.margin>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="520.0" prefWidth="420.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="42.0" prefWidth="480.0" style="-fx-border-color: white;" styleClass="dis" text="Player's Ships Board" textAlignment="CENTER" underline="true">
+                     <font>
+                        <Font name="Comic Sans MS" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="4.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane fx:id="boardGridPane" alignment="CENTER" gridLinesVisible="true" onDragDropped="#handleDragDropped" onDragOver="#handleDragOver" prefHeight="470.0" prefWidth="420.0" style="-fx-background-color: #6fa1d1;" styleClass="water">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="520.0" prefWidth="210.0">
+               <children>
+                  <Button alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="15.0" prefWidth="180.0" styleClass="button_start" text="Start Game">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="15.0" prefWidth="180.0" styleClass="button_again" text="Fire" textFill="#171717">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </Button>
+                  <GridPane prefHeight="126.0" prefWidth="109.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #2300ff; -fx-border-color: black;" text="Water" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" />
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="75.0" styleClass="hit-tile" text="Hit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="74.0" styleClass="button_again" text="Sunk" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2300ff" height="40.0" stroke="BLACK" strokeType="INSIDE" width="34.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dcff1f" height="40.0" stroke="BLACK" strokeType="INSIDE" width="34.0" GridPane.rowIndex="1" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="40.0" stroke="BLACK" strokeType="INSIDE" width="34.0" GridPane.rowIndex="2" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Button fx:id="machineGameVerification" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleMachineGameVerification" prefHeight="40.0" prefWidth="180.0" text=" Machine Game Verification" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="520.0" prefWidth="420.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="420.0" styleClass="dis" text="Enemy Targeting Board" textAlignment="CENTER" textFill="#0b0303" underline="true">
+                     <font>
+                        <Font name="Comic Sans MS" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane fx:id="machineBoardGridPane" alignment="CENTER" gridLinesVisible="true" prefHeight="471.0" prefWidth="420.0" style="-fx-border-color: black; -fx-background-color: #6fa1d1;">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="31.0" styleClass="water-tile" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

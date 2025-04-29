@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
+
+
+
+/* Fuente y fondo de la aplicación */
+.root {
+    -fx-background-color: black;
+    -fx-background-image: url("fondo.gif");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 13px;
+
+}
+
+/* Botones generales */
+.button {
+    -fx-background-color: #212529;
+    -fx-text-fill: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
+}
+
+.button:hover {
+    -fx-background-color: #007bff;
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
+}
+
+/* Texto */
+.text {
+    -fx-font-family: "Press Start 2P";
+    -fx-background-color: transparent;
+    -fx-text-fill: #000;
+
+
+}
+
+.tittle {
+    -fx-font-family: "Sixtyfour Convergence";
+    -fx-background-color: transparent;
+    -fx-font-weight: 700;
+    -fx-text-fill: #000;
+    -fx-font-size: 25px;
+
+}
+
+/* Botón para jugar de nuevo */
+.button_again {
+    -fx-background-color: #e93639;
+    -fx-text-fill: #fff;
+    -fx-border-color: #8c2022;
+    -fx-border-width: 2px;
+    -fx-font-size: 13px;
+}
+
+.button_again:hover {
+    -fx-background-color: #8c2022;
+}
+

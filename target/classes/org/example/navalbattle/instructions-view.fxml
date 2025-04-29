@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label styleClass="tittle" stylesheets="@styles/styles.css" text="GAME INSTRUCTIONS">
+         <VBox.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <TextArea editable="false" prefHeight="421.0" prefWidth="700.0" styleClass="tittle" stylesheets="@styles/game.css" text="¡La Batalla Naval ha comenzado! &#10;&#10;Despliega tu flota estratégicamente en tu territorio y adivina la posición de tu oponente, dispárale y debilita sus barcos. Ell que primero hunda la flota del enemigo sera el vencedor.&#10;&#10;1. Posiciona tu flota en tu tablero y presiona el boton star game.&#10;&#10;2. Opcional. Presiona el boton machine game verification para verificar que el juego de la maquina es correcto.&#10;&#10;3. Inicia el combate seleccionando un cuadrante del enemigo y presionando el boton Fire.&#10;&#10;4. Cuando el golpe es fallido, se marca la casilla como Water en color azul oscuro. Y continua el turno de la maquina.&#10;&#10;5. Cuando el disparo acierta a una nave del enemigo, el cuadrante se marca en color amarillo Hit, y puedes continuar disparando.&#10;&#10;6. Cuando el disparo acierta los cuadrantes que ocupa una nave enemiga en su totalidad, dichos cuadrantes se marcan como Sunk hundido." wrapText="true">
+         <font>
+            <Font size="8.0" />
+         </font></TextArea>
+   </children>
+</VBox>
