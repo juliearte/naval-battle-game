@@ -252,11 +252,12 @@ public class GameController {
     }
 
     @FXML void onHandleInstructionsButton(ActionEvent e) {
-        new AlertBox().showAlert("INFORMATION","INSTRUCCIONES",
-                "- Arrastra barcos (clic derecho rota)\n"+
-                        "- Dispara en tablero enemigo\n"+
-                        "- HIT repites, WATER IA dispara\n"+
-                        "- SUNK repinta barco completo",Alert.AlertType.INFORMATION);
+        new AlertBox().showAlert("INFORMATION", "INSTRUCCIONES DEL JUEGO",
+                "Bienvenido a BattleField.\n\n" +
+                        "- Arrastra tu flota al tablero (clic derecho para rotar).\n" +
+                        "- Dispara haciendo clic en el tablero enemigo.\n" +
+                        "- Gana quien hunda los 10 barcos rivales.\n" +
+                        "- Usa el botón «Mostrar» para ver la flota de la IA.",Alert.AlertType.INFORMATION);
     }
 
     private void save() {

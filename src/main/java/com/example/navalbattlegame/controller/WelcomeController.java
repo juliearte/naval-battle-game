@@ -55,7 +55,7 @@ public class WelcomeController {
                         "- Arrastra tu flota al tablero (clic derecho para rotar).\n" +
                         "- Dispara haciendo clic en el tablero enemigo.\n" +
                         "- Gana quien hunda los 10 barcos rivales.\n" +
-                        "- Usa el botón «Mostrar» para ver la flota de la IA (modo debug).",
+                        "- Usa el botón «Mostrar» para ver la flota de la IA.",
                 Alert.AlertType.INFORMATION);
     }
 }
