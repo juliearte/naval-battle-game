@@ -1,301 +1,841 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navalbattlegame.controller.GameController">
-   <right>
-      <AnchorPane prefHeight="815.0" prefWidth="254.0" BorderPane.alignment="CENTER" />
-   </right>
-   <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="842.0" BorderPane.alignment="CENTER">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.navalbattlegame.controller.GameController">
+   <children>
+      <AnchorPane fx:id="playerBoard" layoutX="120.0" layoutY="80.0" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: WHITE;" />
+      <AnchorPane fx:id="machineBoard" layoutX="680.0" layoutY="80.0" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: WHITE;" />
+      <VBox layoutX="80.0" layoutY="80.0" prefHeight="400.0" prefWidth="40.0" style="-fx-background-color: white;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#67c1eb94" height="636.36" layoutX="115.0" layoutY="113.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="636.36" />
-            <GridPane fx:id="gridPaneGame1" layoutX="50.0" layoutY="48.0" prefHeight="700.0" prefWidth="700.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label text="A" textFill="WHITE" GridPane.columnIndex="1">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="B" textFill="WHITE" GridPane.columnIndex="2">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="C" textFill="WHITE" GridPane.columnIndex="3">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="D" textFill="WHITE" GridPane.columnIndex="4">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="E" textFill="WHITE" GridPane.columnIndex="5">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="F" textFill="WHITE" GridPane.columnIndex="6">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="G" textFill="WHITE" GridPane.columnIndex="7">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="H" textFill="WHITE" GridPane.columnIndex="8">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="I" textFill="WHITE" GridPane.columnIndex="9">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="J" textFill="WHITE" GridPane.columnIndex="10">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="1" textFill="WHITE" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="2" textFill="WHITE" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="3" textFill="WHITE" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="4" textFill="WHITE" GridPane.rowIndex="4">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="5" textFill="WHITE" GridPane.rowIndex="5">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="6" textFill="WHITE" GridPane.rowIndex="6">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="7" textFill="WHITE" GridPane.rowIndex="7">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="8" textFill="WHITE" GridPane.rowIndex="8">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="9" textFill="WHITE" GridPane.rowIndex="9">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="10" textFill="WHITE" GridPane.rowIndex="10">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </GridPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="1" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="2" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="3" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="4" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="5" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="6" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="7" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="8" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="9" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="10" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
          </children>
-      </AnchorPane>
-   </center>
-   <top>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="1918.0" BorderPane.alignment="CENTER" />
-   </top>
-   <left>
-      <AnchorPane prefHeight="866.0" prefWidth="902.0" BorderPane.alignment="CENTER">
+      </VBox>
+      <HBox layoutX="120.0" layoutY="40.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: white;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#67c1eb94" height="636.36" layoutX="182.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="636.36" />
-            <GridPane fx:id="gridPaneGame" layoutX="117.0" layoutY="48.0" prefHeight="700.0" prefWidth="700.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Label text="A" textFill="WHITE" GridPane.columnIndex="1">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="B" textFill="WHITE" GridPane.columnIndex="2">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="C" textFill="WHITE" GridPane.columnIndex="3">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="D" textFill="WHITE" GridPane.columnIndex="4">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="E" textFill="WHITE" GridPane.columnIndex="5">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="F" textFill="WHITE" GridPane.columnIndex="6">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="G" textFill="WHITE" GridPane.columnIndex="7">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="H" textFill="WHITE" GridPane.columnIndex="8">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="I" textFill="WHITE" GridPane.columnIndex="9">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="J" textFill="WHITE" GridPane.columnIndex="10">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="1" textFill="WHITE" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="2" textFill="WHITE" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="3" textFill="WHITE" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="4" textFill="WHITE" GridPane.rowIndex="4">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="5" textFill="WHITE" GridPane.rowIndex="5">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="6" textFill="WHITE" GridPane.rowIndex="6">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="7" textFill="WHITE" GridPane.rowIndex="7">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="8" textFill="WHITE" GridPane.rowIndex="8">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="9" textFill="WHITE" GridPane.rowIndex="9">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label text="10" textFill="WHITE" GridPane.rowIndex="10">
-                     <font>
-                        <Font name="Berlin Sans FB" size="30.0" />
-                     </font>
-                  </Label>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </GridPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="A" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="B" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="C" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="D" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="E" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="F" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="G" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="H" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="I" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="J" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
          </children>
-      </AnchorPane>
-   </left>
-</BorderPane>
+      </HBox>
+      <VBox layoutX="640.0" layoutY="80.0" prefHeight="400.0" prefWidth="40.0" style="-fx-background-color: white;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="1" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="2" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="3" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="4" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="5" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="6" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="7" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="8" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="9" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="10" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox layoutX="680.0" layoutY="40.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: white;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="A" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="B" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="C" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="D" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="E" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="F" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="G" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="H" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="I" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" style="-fx-border-color: BLACK;" text="J" textAlignment="CENTER">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant>
+                           <color>
+                              <Color red="0.7200000286102295" green="0.14399999380111694" blue="0.5499428510665894" />
+                           </color>
+                        </Light.Distant>
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="Cambria Math" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="shipPort" layoutX="80.0" layoutY="520.0" prefHeight="160.0" prefWidth="840.0" />
+      <Button fx:id="instructionsButton" layoutX="-3.0" mnemonicParsing="false" onAction="#onHandleInstructionsButton" prefHeight="29.0" prefWidth="1206.0" style="-fx-background-color: #6c3b2a; -fx-border-color: black;" text="INSTRUCTIONS(?)" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="967.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bomba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="967.0" layoutY="573.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/boton-x.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="showButton" layoutX="1104.0" layoutY="46.0" mnemonicParsing="false" onAction="#onHandleShowButton" style="-fx-background-color: ORANGE;" text="SHOW">
+         <font>
+            <Font name="Cambria Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="967.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/crucero.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1031.0" layoutY="531.0" text="TOCADO">
+         <font>
+            <Font name="Cambria Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="1031.0" layoutY="584.0" text="AGUA">
+         <font>
+            <Font name="Cambria Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="1031.0" layoutY="636.0" text="HUNDIDO">
+         <font>
+            <Font name="Cambria Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="-82.0" layoutY="260.0" prefHeight="40.0" prefWidth="268.0" rotate="-90.0" text="TABLERO DE POSICIÓN">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="250.0" prefHeight="40.0" prefWidth="268.0" rotate="-90.0" text="TABLERO PRINCIPAL">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
