@@ -35,7 +35,7 @@ public class GameStateHandler {
             this.gameInProgress = gameInProgress;
         }
 
-        // Getters
+        /**Getters*/
         public ArrayList<ArrayList<Integer>> getPlayerTable() { return playerTable; }
         public ArrayList<ArrayList<Integer>> getMachineTable() { return machineTable; }
         public int getMachineSunkenBoats() { return machineSunkenBoats; }
@@ -47,16 +47,16 @@ public class GameStateHandler {
 
     public static void saveGameState(GameState state) {
         try {
-            // Crear directorio si no existe
+            /**Create directory if it does not exist*/
             Files.createDirectories(Paths.get("saves"));
 
-            // Guardar estado serializado
+            /**Save serialized state*/
             try (ObjectOutputStream oos = new ObjectOutputStream(
                     new FileOutputStream("saves/" + GAME_STATE_FILE))) {
                 oos.writeObject(state);
             }
 
-            // Guardar información en archivo de texto
+            /**Save information in a text file*/
             try (PrintWriter writer = new PrintWriter(new FileWriter("saves/" + GAME_INFO_FILE))) {
                 writer.println("Estado del juego:");
                 writer.println("----------------");
@@ -68,11 +68,11 @@ public class GameStateHandler {
                 writer.println("----------------");
                 writer.println("Última actualización: " + java.time.LocalDateTime.now());
 
-                // Guardar estado del tablero del jugador
+                //Save player board state
                 writer.println("\nTablero del Jugador:");
                 saveTableToFile(writer, state.getPlayerTable());
 
-                // Guardar estado del tablero de la máquina
+                //Save machine dashboard status
                 writer.println("\nTablero de la Máquina:");
                 saveTableToFile(writer, state.getMachineTable());
             }

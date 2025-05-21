@@ -1,5 +1,5 @@
 package com.example.navalbattlegame.model;
 
 
-/** Resultado lógico de un disparo. */
+/**Logical result of a shot. */
 public enum ShotResult { WATER, HIT, SUNK }

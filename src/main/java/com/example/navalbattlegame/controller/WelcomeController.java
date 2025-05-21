@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.Optional;
 
-/** Pantalla de bienvenida: ingresa nick y elige nueva partida o carga. */
+/** Welcome screen: enter your nickname and choose new game or load.*/
 public class WelcomeController {
 
     @FXML private TextField nicknameTextField;
@@ -44,7 +44,7 @@ public class WelcomeController {
         } else {
             GameView.getInstance().getGameController().initializeBoard(nick);
         }
-        /* cerrar ventana de bienvenida */
+        /** close welcome window */
         ((javafx.stage.Stage) ((javafx.scene.Node) event.getSource())
                 .getScene().getWindow()).close();
     }

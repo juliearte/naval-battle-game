@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-/** Pinta un Board en un AnchorPane.  revealShips=false → oculta barcos intactos. */
+/** Paints a Board on an AnchorPane. revealShips=false → hides intact ships. */
 public class BoardAdapter {
 
     private final AnchorPane pane;

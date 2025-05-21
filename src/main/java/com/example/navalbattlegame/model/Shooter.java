@@ -2,12 +2,12 @@ package com.example.navalbattlegame.model;
 
 
 
-/** Comportamiento común a cualquier “jugador” (humano o IA). */
+/**Behavior common to any “player” (human or AI). */
 public interface Shooter {
 
-    /** Selecciona o recibe la posición del siguiente disparo. */
+    /** Selects or receives the position of the next shot. */
     int[] nextShot(Board enemyBoard);
 
-    /** Devuelve el tablero propio. */
+    /**Returns own board. */
     Board getOwnBoard();
 }

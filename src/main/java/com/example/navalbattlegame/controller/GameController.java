@@ -163,7 +163,7 @@ public class GameController {
         playerTurn=true;
         showButton.setDisable(true);
         machineAdapter.setRevealShips(false);
-        machineAdapter.paint();  // Actualizar para ocultar barcos si estaban visibles
+        machineAdapter.paint();  // Update to hide ships if they were visible
         playerBoard.toBack(); machineBoard.toFront();
     }
 
@@ -185,7 +185,7 @@ public class GameController {
                 playerTurn=false;
                 save();
 
-                // Comprobación adicional de victoria antes de pasar turno
+                /** Additional victory check before passing turn*/
                 if (checkForVictory(machine.getOwnBoard(), true)) {
                     return;
                 }
@@ -195,7 +195,7 @@ public class GameController {
             }
             if (res==ShotResult.SUNK) machineAdapter.paint(); else machineAdapter.paintCell(r,c);
 
-            // Verificamos victoria después de un impacto o hundimiento
+            //We verify victory after an impact or sinking
             if (checkForVictory(machine.getOwnBoard(), true)) {
                 return;
             }
@@ -205,7 +205,7 @@ public class GameController {
         }
     }
 
-    // Método auxiliar para verificar victoria y mostrarlo apropiadamente
+    // Helper method to verify victory and display it appropriately
     private boolean checkForVictory(com.example.navalbattlegame.model.Board board, boolean playerWins) {
         if (board.allBoatsSunk()) {
             finish(playerWins);
@@ -232,14 +232,15 @@ public class GameController {
                     playerAdapter.paintCell(r,c);
                 }
 
-                // Verificar si la máquina ganó después de un impacto o hundimiento
+                /**Check if the machine won after an impact or sinking*/
                 if (checkForVictory(player.getOwnBoard(), false)) {
                     return;
                 }
                 save();
             } catch(AlreadyShotException ignored) {
-                // Si ya se disparó en esta posición, la máquina debería intentar otra
-                // No hacer nada y continuar el bucle intentando otro disparo
+
+            /** If a shot has already been fired at this position, the machine should try another shot*/
+            /**Do nothing and continue the loop trying another shot*/
             }
         }
     }
@@ -284,10 +285,10 @@ public class GameController {
     }
 
     private void finish(boolean win) {
-        // Mostrar mensaje de fin de juego
+        /**Display game over message*/
         String message = win ? "¡Ganaste!" : "La IA ganó :(";
 
-        // Crear diálogo con opciones para reiniciar o salir
+        /**Create dialog with options to restart or exit*/
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Fin de partida");
         alert.setHeaderText(message);
@@ -299,11 +300,11 @@ public class GameController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == newGameButton) {
-            // Reiniciar juego
+            /** Restart game */
             String playerNickName = player.getPlayerNickName();
             initializeBoard(playerNickName);
         } else {
-            // Solo terminar el juego
+            /** Just finish the game */
             machineBoard.setDisable(true);
             playerBoard.setDisable(true);
             gameStarted = false;

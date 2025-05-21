@@ -9,14 +9,14 @@ public class Machine implements Shooter {
     private final BoardImpl board = new BoardImpl();
     private final Random rnd = new Random();
 
-    // Lista para almacenar disparos exitosos y sus alrededores
+    // Ready to store successful shots and their surroundings
     private final List<int[]> targetQueue = new ArrayList<>();
     private int[] lastHit = null;
     private int lastDirection = -1; // -1: no hay dirección, 0: arriba, 1: derecha, 2: abajo, 3: izquierda
 
     public Machine(){ autoFillBoats(); }
 
-    /* ---------- IA de colocación ---------- */
+    /** ---------- Placement AI ---------- */
     public void autoFillBoats(){
         int[] sizes = {4,3,3,2,2,2,1,1,1,1};
         for(int s:sizes) while(!tryPlaceRandom(s)){}
@@ -28,38 +28,38 @@ public class Machine implements Shooter {
         catch(Exception e){ return false; }
     }
 
-    /* ---------- IA de disparo mejorada ---------- */
+    /** ---------- Improved shooting AI ---------- */
     @Override
     public int[] nextShot(Board enemy) {
-        // Si tenemos objetivos potenciales en la cola, usamos esos primero
+        // we have potential targets in the queue, we use those first.
         if (!targetQueue.isEmpty()) {
             return getTargetedShot(enemy);
         }
 
-        // Si acabamos de acertar pero no hay objetivos en cola, volvemos al disparo aleatorio
+        // If we just hit but there are no targets in the queue, we go back to random shooting
         if (lastHit != null) {
             lastHit = null;
             lastDirection = -1;
         }
 
-        // Disparo aleatorio como último recurso
+        //Random shooting as a last resort
         return getRandomShot(enemy);
     }
 
     private int[] getTargetedShot(Board enemy) {
-        // Probamos cada posición en nuestra lista de objetivos
+        // We tested every position on our target list
         while (!targetQueue.isEmpty()) {
             int[] shot = targetQueue.remove(0);
             int r = shot[0], c = shot[1];
 
-            // Verificamos si la posición ya ha sido disparada
+            // We check if the position has already been triggered
             if (isValidTarget(enemy, r, c)) {
                 return new int[]{r, c};
             }
-            // Si no es válida, continuamos con la siguiente
+            //If it is not valid, we continue with the next one.
         }
 
-        // Si llegamos aquí, no encontramos un objetivo válido en la cola
+        //If we get here, we don't find a valid target in the queue
         lastHit = null;
         lastDirection = -1;
         return getRandomShot(enemy);
@@ -73,9 +73,9 @@ public class Machine implements Shooter {
             c = rnd.nextInt(Board.SIZE);
             attempts++;
 
-            // Evitar bucle infinito en caso extremo
+            // Avoid infinite loop in extreme cases
             if (attempts > 100) {
-                // Búsqueda exhaustiva de una celda no disparada
+                //Exhaustive search for an unfired cell
                 for (int i = 0; i < Board.SIZE; i++) {
                     for (int j = 0; j < Board.SIZE; j++) {
                         if (isValidTarget(enemy, i, j)) {
@@ -83,7 +83,7 @@ public class Machine implements Shooter {
                         }
                     }
                 }
-                // Si llegamos aquí, no hay más celdas válidas
+                // If we get here, there are no more valid cells
                 return new int[]{0, 0};
             }
         } while (!isValidTarget(enemy, r, c));
@@ -91,7 +91,7 @@ public class Machine implements Shooter {
         return new int[]{r, c};
     }
 
-    // Verifica si una celda es un objetivo válido (no se ha disparado aún)
+    //Checks if a cell is a valid target (has not been fired yet)
     private boolean isValidTarget(Board enemy, int r, int c) {
         if (r < 0 || r >= Board.SIZE || c < 0 || c >= Board.SIZE) {
             return false;
@@ -105,7 +105,7 @@ public class Machine implements Shooter {
 
     @Override public Board getOwnBoard(){ return board; }
 
-    /* ---------- API esperada por tu GameController ---------- */
+    /** ----------API expected by your GameController---------- */
     public java.util.ArrayList<java.util.ArrayList<Integer>> getmachineTable(){
         return board.toList();
     }

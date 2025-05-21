@@ -9,26 +9,26 @@ public class Player implements Shooter {
 
     public Player(String nick) { this.nick = nick; }
 
-    /* ===== Métodos solicitados por GameController ===== */
+    /** =====Methods requested by GameController ===== */
 
-    /** ¿Está libre la celda (r,c)? ⇒ delega en BoardImpl.free() */
+    /**Is cell (r,c) free? ⇒ delegate to BoardImpl.free()*/
     public boolean freePosition(int r, int c) {
         return board.free(r, c);
     }
 
-    /** Coloca un barco en el tablero propio */
+    /**Place a ship on your own board */
     public void boatPosition(boolean vertical, int r, int c, int size) {
         try {
             board.placeBoat(r, c, size, vertical);
         } catch (InvalidPlacementException e) {
-            // Aquí no debería llegar porque el controlador ya comprobó
-            // que las celdas están libres y dentro de rango. Si ocurre,
-            // simplemente ignoramos o registra el error según necesites.
+            // It shouldn't happen here because the controller has already checked
+            // that the cells are free and within range. If it does,
+            // we simply ignore or log the error as needed.
             System.err.println(e.getMessage());
         }
     }
 
-    /* ===== Métodos que ya usaba tu lógica de disparo ===== */
+    /** ===== Methods that your trigger logic already used ===== */
 
     public java.util.ArrayList<java.util.ArrayList<Integer>> getPlayerTable() {
         return board.toList();
