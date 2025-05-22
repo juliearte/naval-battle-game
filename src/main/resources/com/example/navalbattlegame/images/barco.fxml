@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="175.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="75.7857666015625" endY="-13.80000114440918" layoutX="15.0" layoutY="48.0" startX="84.98576354980469" startY="0.9999923706054688" />
+      <Polygon fill="#abafb1" layoutX="66.0" layoutY="33.0" points="76.42848205566406, 29.207130432128906, 96.20001220703125, 21.999996185302734, 57.99999237060547, 21.999996185302734" stroke="#fff4f400" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#abafb1" height="6.0" layoutX="6.0" layoutY="55.0" stroke="TRANSPARENT" strokeType="INSIDE" width="134.0" />
+      <Polygon layoutX="69.0" layoutY="35.0" points="58.99998474121094, 25.99999237060547, 58.99998474121094, 38.00000762939453, 74.99998474121094, 25.99999237060547" stroke="#ffffff00" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="12.0" layoutX="6.0" layoutY="61.0" stroke="TRANSPARENT" strokeType="INSIDE" width="124.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="3.0" layoutX="2.0" layoutY="59.0" stroke="#fc000000" strokeType="INSIDE" width="143.0" />
+      <Polygon fill="#bed0e1" layoutX="47.0" layoutY="42.0" points="-39.5715217590332, 13.000003814697266, 15.228469848632812, 13.000003814697266, -1.2000045776367188, 6.999996185302734" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bed0e1" height="6.0" layoutX="44.0" layoutY="49.0" stroke="TRANSPARENT" strokeType="INSIDE" width="97.0" />
+      <Polygon fill="#bed0e1" layoutX="151.0" layoutY="-3.0" points="-13.37152099609375, 58.0, 11.20001220703125, 57.999996185302734, -11.399993896484375, 51.999996185302734" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bed0e1" height="12.0" layoutX="95.0" layoutY="38.0" stroke="TRANSPARENT" strokeType="INSIDE" width="35.0" />
+      <Polygon fill="#bed0e1" layoutX="166.0" layoutY="44.0" points="-37.971527099609375, 7.607120513916016, -27.571533203125, -5.999996185302734, -37.971527099609375, -5.999996185302734" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon layoutX="133.0" layoutY="29.0" points="-11.814239501953125, 18.99999237060547, 1.185760498046875, 10.799995422363281, -11.814239501953125, 10.799995422363281" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="3.0" layoutX="107.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="3.0" layoutX="107.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Polygon fill="#bed0e1" layoutX="124.0" layoutY="42.0" points="-27.571533203125, 6.999992370605469, -27.571533203125, -4.0, -35.21422576904297, 6.999992370605469" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Line endX="68.00001525878906" endY="2.0" layoutX="26.0" layoutY="38.0" startX="23.492889404296875" startY="2.0" />
+      <Line endX="12.992897033691406" endY="2.5999984741210938" layoutX="36.0" layoutY="46.0" startX="12.992897033691406" startY="-5.5" />
+      <Line endX="65.58576965332031" endY="1.9999923706054688" layoutX="26.0" layoutY="42.0" startX="23.492889404296875" startY="2.0" />
+      <Line endX="12.992897033691406" endY="2.5999984741210938" layoutX="58.0" layoutY="46.0" startX="12.992897033691406" startY="-5.5" />
+      <Line endX="76.38578033447266" endY="-3.3999996185302734" layoutX="5.0" layoutY="38.0" startX="68.50001525878906" startY="10.999992370605469" />
+      <Line endX="10.585769653320312" endY="-0.10710716247558594" layoutX="87.0" layoutY="34.0" startX="-11.614227294921875" startY="-0.10710716247558594" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="12.0" layoutX="71.0" layoutY="22.0" stroke="TRANSPARENT" strokeType="INSIDE" width="31.0" />
+      <Polygon fill="#c7daec" layoutX="68.0" layoutY="14.0" points="-6.614219665527344, 7.600000381469727, 24.185768127441406, 19.000001907348633, -3.6142196655273438, 2.799997329711914" stroke="TRANSPARENT" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
